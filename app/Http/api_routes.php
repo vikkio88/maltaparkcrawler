@@ -19,4 +19,8 @@ $api->version('v1', function ($api) {
 		return \App\User::all();
 	});
 
+	// Sections route
+	$api->get('sections','App\Api\V1\Controllers\SectionsController@getAll');
+	$api->get('sections/refresh','App\Api\V1\Controllers\SectionsController@refresh');
+
 });

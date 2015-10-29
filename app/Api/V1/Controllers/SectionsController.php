@@ -2,85 +2,37 @@
 
 namespace App\Api\V1\Controllers;
 
+use App\Sections;
 use Illuminate\Http\Request;
 
 use App\Http\Controllers\Controller;
 
 class SectionsController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function getAll()
-    {
+	/**
+	 * Display a listing of the Sections.
+	 *
+	 * @return \Illuminate\Http\Response
+	 */
+	public function getAll()
+	{
+		return response()
+			->json(
+				Sections::all()
+			);
+	}
 
-    }
+	/**
+	 * Refresh from Remote the sections
+	 *
+	 * @return \Illuminate\Http\Response
+	 */
+	public function refresh()
+	{
+		return response()
+			->json(
+				Sections::refresh()
+			);
+	}
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function refresh()
-    {
-        //
-    }
-
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
-    {
-        //
-    }
-
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, $id)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy($id)
-    {
-        //
-    }
 }

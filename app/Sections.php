@@ -10,6 +10,9 @@ use DB;
 class Sections extends Model
 {
 	protected $table = 'sections';
+	protected $hidden =[
+		'created_at'
+	];
 
     public static function refresh(){
 		DB::table('sections')->delete();
@@ -23,5 +26,7 @@ class Sections extends Model
 				)
 			);
 		}
+
+		return true;
 	}
 }
