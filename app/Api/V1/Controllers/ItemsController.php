@@ -21,7 +21,7 @@ class SectionsController extends Controller
 				Sections::all()
 			);
 	}
-
+	
 
 	/**
 	 * Refresh from Remote the sections

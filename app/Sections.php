@@ -16,7 +16,7 @@ class Sections extends Model
 
     public static function refresh(){
 		DB::table('sections')->delete();
-		$sections = \App\Lib\SectionParser::getSectionsFromNet();
+		$sections = \App\Lib\MaltaParkParser::getSectionsFromNet();
 		foreach($sections as $s_id => $s_desc){
 			DB::table('sections')->insert(
 				array(

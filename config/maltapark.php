@@ -7,6 +7,12 @@
  */
 
 return [
+	//Url
 	'url' => 'http://www.maltapark.com',
-	'regexp' => '/listings\.aspx\?category=(\d+).+span>(.+?)<\/a>/'
+	'pageListCategory' => '/listings.aspx?category=',
+
+	//RegExps
+	'categoryRegexp' => '/listings\.aspx\?category=(\d+).+span>(.+?)<\/a>/',
+	'imgForListItem' => '/<img alt="item" id="p" src="(.+?)"/',
+	'titleForListItem' => '/<div class="title"><a href=".+">(.+?)<\/a>/',
 ];
