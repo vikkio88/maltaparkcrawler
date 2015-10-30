@@ -6,7 +6,7 @@
  * Time: 16:58
  */
 
-namespace App\Lib;
+namespace App\Lib\Helpers;
 
 
 class RegExp

@@ -6,7 +6,7 @@
  * Time: 16:13
  */
 
-namespace App\Lib\MaltaParkItem;
+namespace App\Lib\MaltaParkItems;
 
 
 class ItemDetail extends Item

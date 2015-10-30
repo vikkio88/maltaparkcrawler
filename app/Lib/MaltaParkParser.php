@@ -9,36 +9,33 @@
 namespace App\Lib;
 
 
-use App\Lib\MaltaParkItem\ListItem;
+use App\Lib\MaltaParkItems\ListItem;
+use App\Lib\Helpers;
 use Illuminate\Support\Facades\Config;
 use Goutte\Client;
 
 class MaltaParkParser
 {
 
-	static function getItemListForSectionFromNet($sectionId)
+	static function getItemListForSectionFromNet($sectionId, $pageNum = 1)
 	{
+		$url = 	Config::get('maltapark.url') .
+				Config::get('maltapark.pageListCategory') .
+				$sectionId .
+				Config::get('maltapark.pageNum') .
+				$pageNum;
+
 		$client = new Client();
 		$items = [];
-		$crawler = $client->request('GET', Config::get('maltapark.url') . Config::get('maltapark.pageListCategory'). $sectionId);
-		$crawler->filter('#item_list')->each(function ($node) {
+		$crawler = $client->request(
+			'GET',
+			$url
+		);
 
-			$item = new ListItem();
-
-			$item->img_url =  RegExp::getFirstMatch(Config::get('maltapark.imgForListItem'), $node->html());
-
-			$item->title = RegExp::getFirstMatch(Config::get('maltapark.titleForListItem'), $node->html());
-
+		foreach ($crawler->filter('#item_list') as $node) {
+			$item = new ListItem(Helpers\Dom::getHtml($node));
 			$items[] = $item;
-			/*
-			$node->filter('div.img')->each(
-					function($img_node){
-						echo $img_node->html();
-					}
-			);
-			*/
-		});
-
+		}
 		return $items;
 	}
 

@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Lib\MaltaParkItem;
+namespace App\Lib\MaltaParkItems;
 
 abstract class Item
 {

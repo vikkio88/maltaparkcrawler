@@ -3,9 +3,11 @@
 namespace App\Api\V1\Controllers;
 
 use App\Sections;
+use App\Lib\MaltaParkParser;
 use Illuminate\Http\Request;
 
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Input;
 
 class SectionsController extends Controller
 {
@@ -16,11 +18,21 @@ class SectionsController extends Controller
 	 */
 	public function getAll()
 	{
-		return response()
-			->json(
-				Sections::all()
-			);
+			return response()
+					->json(
+							Sections::all()
+					);
 	}
+
+	public function getItemsBySectionId($sectionId)
+	{
+		$pageNum = Input::get("p",1);
+		return response()
+				->json(
+						MaltaParkParser::getItemListForSectionFromNet($sectionId,$pageNum)
+				);
+	}
+
 
 
 	/**
