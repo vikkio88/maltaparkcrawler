@@ -44,6 +44,8 @@ class ItemDetail extends Item
 			Config::get('maltapark.imgForItemDetail'),
 			$elementHtml
 		);
+
+        //TODO: Think about another RegExp if is a wanted
 		$this->title = Helpers\RegExp::getFirstMatch(
 			Config::get('maltapark.titleForItemDetail'),
 			$elementHtml

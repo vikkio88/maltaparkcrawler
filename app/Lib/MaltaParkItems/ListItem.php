@@ -27,10 +27,12 @@ class ListItem extends Item
 			Config::get('maltapark.imgForListItem'),
 			$elementHtml
 		);
-		$this->title = Helpers\RegExp::getFirstMatch(
-			Config::get('maltapark.titleForListItem'),
-			$elementHtml
-		);
+		$this->title = strip_tags(
+            Helpers\RegExp::getFirstMatch(
+			    Config::get('maltapark.titleForListItem'),
+			    $elementHtml
+		    )
+        );
 		$this->price = Helpers\RegExp::getFirstMatch(
 			Config::get('maltapark.priceForListItem'),
 			$elementHtml
