@@ -1,0 +1,18 @@
+<div data-cg-busy="Promessa">
+    <div class="panel panel-default">
+        <div class="panel-heading">Sections</div>
+        <div class="panel-body">
+            <div data-filtrofull></div>
+        </div>
+        <table class="table table-striped">
+            <thead>
+                <th>#</th>
+                <th>Sections</th>
+            </thead>
+            <tr data-ng-repeat="section in vm.sections | filter:searchText">
+                <td><a data-ui-sref="sectionOne({ sectionId: section.id })">#</a></td>
+                <td>{{ section.description | capitalize }}</td>
+            </tr>
+        </table>
+    </div>
+</div>
