@@ -2,7 +2,6 @@
 
 namespace App\Api\V1\Controllers;
 
-use App\Sections;
 use App\Lib\MaltaParkParser;
 use Illuminate\Http\Request;
 
@@ -20,7 +19,7 @@ class SectionsController extends Controller
 	{
 			return response()
 					->json(
-							Sections::all()
+							MaltaParkParser::getSectionsFromNet()
 					);
 	}
 

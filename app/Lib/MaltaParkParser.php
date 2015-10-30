@@ -9,21 +9,40 @@
 namespace App\Lib;
 
 
+use App\Lib\MaltaParkItems\ItemDetail;
 use App\Lib\MaltaParkItems\ListItem;
 use App\Lib\Helpers;
+use App\Lib\MaltaParkItems\Section;
 use Illuminate\Support\Facades\Config;
 use Goutte\Client;
 
 class MaltaParkParser
 {
+	static function getItemDetailFromNet($itemId)
+	{
+		$url = Config::get('maltapark.url') .
+			Config::get('maltapark.pageItemDetail') .
+			$itemId;
+
+		$client = new Client();
+		$crawler = $client->request(
+			'GET',
+			$url
+		);
+		$itemDetail = null;
+		foreach ($crawler->filter('.detailwrap') as $node) {
+			$itemDetail = new ItemDetail(Helpers\Dom::getHtml($node),$itemId);
+		}
+		return $itemDetail;
+	}
 
 	static function getItemListForSectionFromNet($sectionId, $pageNum = 1)
 	{
-		$url = 	Config::get('maltapark.url') .
-				Config::get('maltapark.pageListCategory') .
-				$sectionId .
-				Config::get('maltapark.pageNum') .
-				$pageNum;
+		$url = Config::get('maltapark.url') .
+			Config::get('maltapark.pageListCategory') .
+			$sectionId .
+			Config::get('maltapark.pageNum') .
+			$pageNum;
 
 		$client = new Client();
 		$items = [];
@@ -42,16 +61,12 @@ class MaltaParkParser
 	static function getSectionsFromNet()
 	{
 		$sections = [];
-
 		$contents = file_get_contents(Config::get('maltapark.url'));
 		if (!$contents) return [];
-
-		preg_match_all(Config::get('maltapark.categoryRegexp'), $contents, $matches);
-
+		$matches = Helpers\RegExp::getAllMatch(Config::get('maltapark.categoryRegexp'), $contents);
 		for ($i = 0; $i < count($matches[1]); $i++) {
-			$sections[$matches[1][$i]] = $matches[2][$i];
+			$sections[] = new Section($matches[1][$i],$matches[2][$i]);
 		}
-
 		return $sections;
 	}
 

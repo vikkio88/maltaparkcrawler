@@ -7,9 +7,9 @@ use Illuminate\Foundation\Testing\DatabaseTransactions;
 class MaltaParkParserTest extends TestCase
 {
     /**
-     * A basic test example.
      *
-     * @return void
+     * @group Sections
+     *
      */
     public function testGetSectionsFromNet()
     {
@@ -30,14 +30,33 @@ class MaltaParkParserTest extends TestCase
 
     }
 
-
-
-    public function testGenerateTable()
+    /**
+     * @group ItemDetails
+     * Tests the api edit form
+     */
+    public function testGetItemDetails()
     {
-        //$this->assertTrue(empty(\App\Sections::all()));
-        /*
-        \App\Sections::refresh();
-        $this->assertTrue(!empty(\App\Sections::all()));
-        */
+        $itemId = 4722773;
+        $item = App\Lib\MaltaParkParser::getItemDetailFromNet($itemId);
+        print_r($item);
+        $this->assertTrue(!empty($item));
+
     }
+
+    /**
+     * @group TextParsing
+     * Tests the api edit form
+     */
+    public function testFormatCurrency(){
+        $sectionId = 2;
+        $items = App\Lib\MaltaParkParser::getItemListForSectionFromNet($sectionId);
+
+        foreach($items as $item){
+            echo "\nBefore: ";
+            echo $item->price;
+            echo "\nAfter: ";
+            echo \App\Lib\Helpers\TextFormatter::currencyStringToFloat($item->price);
+        }
+    }
+
 }

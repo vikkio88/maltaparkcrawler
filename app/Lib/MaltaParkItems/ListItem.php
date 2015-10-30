@@ -14,6 +14,7 @@ use Illuminate\Support\Facades\Config;
 
 class ListItem extends Item
 {
+	public $date;
 
 	public function __construct($elementHtml)
 	{
@@ -34,6 +35,7 @@ class ListItem extends Item
 			Config::get('maltapark.priceForListItem'),
 			$elementHtml
 		);
+		$this->price_val = Helpers\TextFormatter::currencyStringToFloat($this->price);
 		$this->date = Helpers\RegExp::getFirstMatch(
 			Config::get('maltapark.dateForListItem'),
 			$elementHtml

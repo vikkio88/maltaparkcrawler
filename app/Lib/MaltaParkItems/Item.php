@@ -10,5 +10,5 @@ abstract class Item
 	public $img_url;
 	public $title;
 	public $price;
-	public $date;
+	public $price_val;
 }
