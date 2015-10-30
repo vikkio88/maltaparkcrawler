@@ -21,13 +21,17 @@
             $stateParams
         )
         {
+
+            $stateParams.page = angular.isUndefined($stateParams.page) ? 1 : $stateParams.page;
+
             var vm = this;
+            vm.section = null; //TODO: retrieve as well section description
             vm.items = [];
 
             $scope.Promessa =
                 Common.Get
                 (
-                    "sections/"+$stateParams.sectionId+"/items"
+                    "sections/"+$stateParams.sectionId+"/items?p="+$stateParams.page
                 );
 
             $scope.Promessa

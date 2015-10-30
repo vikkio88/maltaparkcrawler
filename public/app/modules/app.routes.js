@@ -50,7 +50,7 @@
                         )
                         .state("sectionOne",
                             {
-                                url: "/sections/:sectionId/items?page=1",
+                                url: "/sections/:sectionId/items?page",
                                 templateUrl: "app/sections/sectionDetailView.html",
                                 controller: "SectionCtrl as vm",
                                 ncyBreadcrumb: {
