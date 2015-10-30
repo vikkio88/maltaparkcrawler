@@ -11,7 +11,10 @@
             </thead>
             <tr data-ng-repeat="item in vm.items | filter:searchText">
                 <td><a data-ui-sref="sectionOne({ sectionId: section.id })">#</a></td>
-                <td>{{ item.title | capitalize }}</td>
+                <td>
+                    {{ item.title | capitalize }}
+                    <img src="http://www.maltapark.com{{ item.img_url }}" >
+                </td>
             </tr>
         </table>
     </div>
