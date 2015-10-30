@@ -54,7 +54,7 @@
                                 templateUrl: "app/sections/sectionDetailView.html",
                                 controller: "SectionCtrl as vm",
                                 ncyBreadcrumb: {
-                                    parent: 'Section',
+                                    parent: 'sections',
                                     label: 'Section Items'
                                 }
                             })
