@@ -9,9 +9,9 @@
                 <th>#</th>
                 <th>Sections</th>
             </thead>
-            <tr data-ng-repeat="section in vm.sections | filter:searchText">
+            <tr class="clickable" data-ng-repeat="section in vm.sections | filter:searchText" data-ui-sref="sectionOne({ sectionId: section.id })">
                 <td><a data-ui-sref="sectionOne({ sectionId: section.id })">#</a></td>
-                <td>{{ section.description | capitalize }}</td>
+                <td class="bigger-text">{{ section.description | capitalize }}</td>
             </tr>
         </table>
     </div>

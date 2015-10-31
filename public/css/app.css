@@ -47,3 +47,23 @@ div.marginright10p{
     margin: auto;
     padding: 10px 10px 10px 10px;
 }
+
+.thumb-list{
+    height: 290px;
+    position: relative;
+}
+.thumb-list:hover {
+    background-color: #f5f5f5;
+}
+
+.buttons {
+    position: absolute;
+    bottom: 0;
+}
+.clickable {
+    cursor: pointer;
+}
+
+.bigger-text {
+    font-size: 30px;
+}

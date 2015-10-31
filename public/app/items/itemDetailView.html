@@ -3,10 +3,10 @@
         <div class="panel-heading">Item Details</div>
         <div class="panel-body">
             <div class="thumbnail">
-                <img class="img-responsive" src="http://www.maltapark.com{{vm.item.img_url}}" alt="">
+                <img style="height: auto; max-width: 100%" class="img-responsive" src="http://www.maltapark.com{{vm.item.img_url}}" alt="">
                 <div class="caption-full">
                     <h4 class="pull-right">{{vm.item.price}}</h4>
-                    <h4><a href="#">{{vm.item.title}}</a></h4>
+                    <h2><a href="http://www.maltapark.com/item.aspx?ItemID={{ vm.item.id }}" target="_blank">{{vm.item.title}}</a></h2>
                     <p>{{vm.item.description}}</p>
                 </div>
                 <table class="table table-striped">
@@ -46,6 +46,7 @@
                         <td>{{vm.item.views}}</td>
                     </tr>
                 </table>
+                <a href="http://www.maltapark.com/item.aspx?ItemID={{ vm.item.id }}" target="_blank" class="btn btn-default" role="button">View on MaltaPark</a>
             </div>
         </div>
 
