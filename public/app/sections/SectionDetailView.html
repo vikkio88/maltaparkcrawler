@@ -8,34 +8,37 @@
 
         <div ng-repeat="item in vm.items" ng-if="$index % 3 == 0" class="row">
             <div class="col-sm-6 col-md-4">
-                <div class="thumbnail">
+                <div class="thumbnail thumb-list">
                     <img style="height: auto; max-width: 100%; display: block;" alt="100%x200" class="img-responsive" src="http://www.maltapark.com{{ vm.items[$index].img_url }}" data-holder-rendered="true">
                     <div class="caption">
                         <h3>{{vm.items[$index].title | capitalize}}</h3>
-                        <p>{{ vm.items[$index].price }}</p>
-                        <p><a data-ui-sref="itemOne({ sectionId: vm.section.id, itemId: vm.items[$index].id })" class="btn btn-primary" role="button">Details</a> <a href="#" class="btn btn-default" role="button">on MaltaPark</a></p>
+                        <h4>{{ vm.items[$index].price }}</h4>
+                        <p>{{ vm.items[$index].date }}</p>
+                        <p class="buttons"><a data-ui-sref="itemOne({ sectionId: vm.section.id, itemId: vm.items[$index].id })" class="btn btn-primary" role="button">Details</a> <a href="http://www.maltapark.com/item.aspx?ItemID={{ vm.items[$index].id }}" target="_blank" class="btn btn-default" role="button">on MaltaPark</a></p>
                     </div>
                 </div>
             </div>
 
             <div class="col-sm-6 col-md-4">
-                <div class="thumbnail">
+                <div class="thumbnail thumb-list">
                     <img style="height: auto; max-width: 100%; display: block;" alt="100%x200" class="img-responsive" src="http://www.maltapark.com{{ vm.items[$index + 1].img_url }}" data-holder-rendered="true">
                     <div class="caption">
                         <h3>{{vm.items[$index + 1].title | capitalize}}</h3>
-                        <p>{{ vm.items[$index + 1].price }}</p>
-                        <p><a data-ui-sref="itemOne({ sectionId: vm.section.id, itemId: vm.items[$index + 1].id })" class="btn btn-primary" role="button">Details</a> <a href="#" class="btn btn-default" role="button">on MaltaPark</a></p>
+                        <h4>{{ vm.items[$index + 1].price }}</h4>
+                        <p>{{ vm.items[$index + 1].date }}</p>
+                        <p class="buttons"><a data-ui-sref="itemOne({ sectionId: vm.section.id, itemId: vm.items[$index + 1].id })" class="btn btn-primary" role="button">Details</a> <a href="http://www.maltapark.com/item.aspx?ItemID={{ vm.items[$index + 1].id }}" target="_blank" class="btn btn-default" role="button">on MaltaPark</a></p>
                     </div>
                 </div>
             </div>
 
             <div data-ng-if="vm.items[$index + 2] != nil" class="col-sm-6 col-md-4">
-                <div class="thumbnail">
+                <div class="thumbnail thumb-list">
                     <img style="height: auto; max-width: 100%; display: block;" alt="100%x200" class="img-responsive" src="http://www.maltapark.com{{ vm.items[$index + 2].img_url }}" data-holder-rendered="true">
                     <div class="caption">
                         <h3>{{vm.items[$index + 2].title | capitalize}}</h3>
-                        <p>{{ vm.items[$index + 2].price }}</p>
-                        <p><a data-ui-sref="itemOne({ sectionId: vm.section.id, itemId: vm.items[$index + 2].id })" class="btn btn-primary" role="button">Details</a> <a href="#" class="btn btn-default" role="button">on MaltaPark</a></p>
+                        <h4>{{ vm.items[$index + 2].price }}</h4>
+                        <p>{{ vm.items[$index + 2].date }}</p>
+                        <p class="buttons"><a data-ui-sref="itemOne({ sectionId: vm.section.id, itemId: vm.items[$index + 2].id })" class="btn btn-primary" role="button">Details</a> <a href="http://www.maltapark.com/item.aspx?ItemID={{ vm.items[$index + 2].id }}" target="_blank" class="btn btn-default" role="button">on MaltaPark</a></p>
                     </div>
                 </div>
             </div>
