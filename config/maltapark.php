@@ -25,7 +25,7 @@ return [
 	'titleForListItem' => '/<div class="title"><a href=".+">(.+?)<\/a>/',
 	'dateForListItem'=> '/"added">(.+?)<\//',
 
-	'titleForItemDetail' => '/"title">(.+?)<\//',
+	'titleForItemDetail' => '/"title">(.+?)<\/div/',
 	'priceForItemDetail' => '/"price">(.+?)<span/',
 	'imgForItemDetail' => '/dothumbnail\.ashx\?(.+?)"/',
 	'topDetailForItemDetail' => ':<\/label>(.+?)<\/li/',

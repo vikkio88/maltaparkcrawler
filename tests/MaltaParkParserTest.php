@@ -36,7 +36,7 @@ class MaltaParkParserTest extends TestCase
      */
     public function testGetItemDetails()
     {
-        $itemId = 4722773;
+        $itemId = 4725038;
         $item = App\Lib\MaltaParkParser::getItemDetailFromNet($itemId);
         print_r($item);
         $this->assertTrue(!empty($item));

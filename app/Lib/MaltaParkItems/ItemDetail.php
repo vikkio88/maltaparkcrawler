@@ -45,11 +45,12 @@ class ItemDetail extends Item
 			$elementHtml
 		);
 
-        //TODO: Think about another RegExp if is a wanted
-		$this->title = Helpers\RegExp::getFirstMatch(
-			Config::get('maltapark.titleForItemDetail'),
-			$elementHtml
-		);
+		$this->title = strip_tags(
+            Helpers\RegExp::getFirstMatch(
+			    Config::get('maltapark.titleForItemDetail'),
+			    $elementHtml
+		    )
+        );
 		$this->price = Helpers\RegExp::getFirstMatch(
 			Config::get('maltapark.priceForItemDetail'),
 			$elementHtml
