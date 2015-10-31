@@ -20,27 +20,31 @@
             )
         {
             var vm = this;
-            vm.sections = [];
+                vm.sections = [];
 
-            $scope.Promessa =
-            Common.Get
-            (
-                "sections"
-            );
+            if(localStorage.getItem("sections") === null) {
 
-            $scope.Promessa
-                .then
-            (
-                function(data)
-                {
-                    if(Common.isDebug()) console.log(data.data);
-                    vm.sections = data.data;
-                },
-                function(data)
-                {
-                    console.log(data);
-                }
-            );
+                $scope.Promessa =
+                    Common.Get
+                    (
+                        "sections"
+                    );
+
+                $scope.Promessa
+                    .then
+                (
+                    function (data) {
+                        if (Common.isDebug()) console.log(data.data);
+                        vm.sections = data.data;
+                        localStorage.setItem("sections",JSON.stringify(vm.sections));
+                    },
+                    function (data) {
+                        console.log(data);
+                    }
+                );
+            } else{
+                vm.sections = JSON.parse(localStorage.getItem("sections"));
+            }
 
         }
     }

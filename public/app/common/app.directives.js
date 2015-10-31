@@ -9,58 +9,15 @@
             ]
         );
 
-        //Lista candidati
-        directives.directive('listacandidati',function(){
-            return{
-                restrict: 'AE',
-                replace: false,
-                templateUrl: 'app/candidati/candidatiListView.html'
-            }
-        });
-
-        //Lista liste
-        directives.directive('listaliste',function(){
-            return{
-                restrict: 'AE',
-                replace: false,
-                templateUrl: 'app/liste/listeListView.html'
-            }
-        });
-
-        //Risultati per Sezione Table
-        directives.directive('risultatisezione',function(){
-            return{
-                restrict: 'AE',
-                replace: false,
-                templateUrl: 'app/common/views/risultatiSezioneTable.html'
-            }
-        });
-
-        //Risultati per SezioneOne View
-        directives.directive('risultaticandidati',function(){
-            return{
-                restrict: 'AE',
-                replace: false,
-                templateUrl: 'app/common/views/risultatiCandidatiTable.html'
-            }
-        });
-        directives.directive('risultatisindaci',function(){
-            return{
-                restrict: 'AE',
-                replace: false,
-                templateUrl: 'app/common/views/risultatiSindaciTable.html'
-            }
-        });
-        directives.directive('risultatialtrivoti',function(){
-            return{
-                restrict: 'AE',
-                replace: false,
-                templateUrl: 'app/common/views/risultatiAltriVotiTable.html'
-            }
-        });
-
-
         //Utils
+        directives.directive('pagination',function(){
+            return{
+                restrict: 'AE',
+                replace: false,
+                templateUrl: 'app/common/views/pagination.html'
+            }
+        });
+
         directives.directive('filtrofull',function(){
             return{
                 restrict: 'AE',

@@ -23,13 +23,13 @@
     <script type="application/javascript" src="app/common/app.common.js"></script>
     <script type="application/javascript" src="app/common/app.directives.js"></script>
 
-    <!--Sindaci-->
+    <!--Sections-->
     <script type="application/javascript" src="app/sections/sectionsCtrl.js"></script>
     <script type="application/javascript" src="app/sections/sectionCtrl.js"></script>
-    <!--Candidati
-    <script type="application/javascript" src="app/items/itemsCtrl.js"></script>
-    <script type="application/javascript" src="app/item/itemCtrl.js"></script>
-    -->
+    <!--Items-->
+    <script type="application/javascript" src="app/items/itemCtrl.js"></script>
+
+
     <base href="/">
 
 </head>
@@ -42,14 +42,11 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
         </button>
-        <a class="navbar-brand" href="#/">Elezioni</a>
+        <a class="navbar-brand" href="#/">PaltaMark</a>
     </div>
     <div class="collapse navbar-collapse" id="nav-toggle">
         <ul class="nav navbar-nav">
-            <li data-ui-sref-active="active"><a data-ui-sref="sindaciList">Sindaci</a></li>
-            <li data-ui-sref-active="active"><a data-ui-sref="candidatiList">Candidati</a></li>
-            <li data-ui-sref-active="active"><a data-ui-sref="listeList">Liste</a></li>
-            <li data-ui-sref-active="active"><a data-ui-sref="sezioniList">Sezioni</a></li>
+            <li data-ui-sref-active="active"><a data-ui-sref="sections">Sections</a></li>
         </ul>
         <form class="navbar-form navbar-right" role="search">
             <input type="text" class="form-control" placeholder="Search">

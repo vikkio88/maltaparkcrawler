@@ -62,11 +62,11 @@
                     //Items
                         .state("itemOne",
                             {
-                                url: "/items/:itemId",
+                                url: "/sections/:sectionId/items/:itemId",
                                 templateUrl: "app/items/itemDetailView.html",
                                 controller: "ItemCtrl as vm",
                                 ncyBreadcrumb: {
-                                    parent: 'items',
+                                    parent: 'sectionOne',
                                     label: 'Item Details'
                                 }
                             });

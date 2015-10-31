@@ -1,7 +1,8 @@
 <div data-cg-busy="Promessa">
     <div class="panel panel-default">
-        <div class="panel-heading">Sections</div>
+        <div class="panel-heading"><h2>{{vm.section.description | capitalize}}</h2></div>
         <div class="panel-body">
+            <div data-pagination></div>
             <div data-filtrofull></div>
         </div>
 
@@ -12,7 +13,7 @@
                     <div class="caption">
                         <h3>{{vm.items[$index].title | capitalize}}</h3>
                         <p>{{ vm.items[$index].price }}</p>
-                        <p><a href="#" class="btn btn-primary" role="button">Button</a> <a href="#" class="btn btn-default" role="button">Button</a></p>
+                        <p><a data-ui-sref="itemOne({ sectionId: vm.section.id, itemId: vm.items[$index].id })" class="btn btn-primary" role="button">Details</a> <a href="#" class="btn btn-default" role="button">on MaltaPark</a></p>
                     </div>
                 </div>
             </div>
@@ -23,7 +24,7 @@
                     <div class="caption">
                         <h3>{{vm.items[$index + 1].title | capitalize}}</h3>
                         <p>{{ vm.items[$index + 1].price }}</p>
-                        <p><a href="#" class="btn btn-primary" role="button">Button</a> <a href="#" class="btn btn-default" role="button">Button</a></p>
+                        <p><a data-ui-sref="itemOne({ sectionId: vm.section.id, itemId: vm.items[$index + 1].id })" class="btn btn-primary" role="button">Details</a> <a href="#" class="btn btn-default" role="button">on MaltaPark</a></p>
                     </div>
                 </div>
             </div>
@@ -34,12 +35,14 @@
                     <div class="caption">
                         <h3>{{vm.items[$index + 2].title | capitalize}}</h3>
                         <p>{{ vm.items[$index + 2].price }}</p>
-                        <p><a href="#" class="btn btn-primary" role="button">Button</a> <a href="#" class="btn btn-default" role="button">Button</a></p>
+                        <p><a data-ui-sref="itemOne({ sectionId: vm.section.id, itemId: vm.items[$index + 2].id })" class="btn btn-primary" role="button">Details</a> <a href="#" class="btn btn-default" role="button">on MaltaPark</a></p>
                     </div>
                 </div>
             </div>
 
         </div>
 
+        <div data-pagination></div>
     </div>
+
 </div>

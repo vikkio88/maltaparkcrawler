@@ -23,10 +23,28 @@
         {
 
             $stateParams.page = angular.isUndefined($stateParams.page) ? 1 : $stateParams.page;
-
             var vm = this;
-            vm.section = null; //TODO: retrieve as well section description
+            vm.section = {};
+            vm.section.id = $stateParams.sectionId;
+            if(!(localStorage.getItem("sections") === null)) {
+                var sections = (JSON.parse(localStorage.getItem("sections")));
+                var i = 0, len = sections.length;
+                for (; i < len; i++) {
+                    if (+sections[i].id == +vm.section.id) {
+                        vm.section.description = sections[i].description;
+                    }
+                }
+            }else{
+                vm.section.description = "Section";
+            }
             vm.items = [];
+
+            vm.currentPage = parseInt($stateParams.page);
+            vm.pages = [];
+            var i = 0, len = 10;
+            for(;i<len; i++){
+                vm.pages.push(vm.currentPage + i)
+            }
 
             $scope.Promessa =
                 Common.Get

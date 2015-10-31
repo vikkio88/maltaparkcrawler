@@ -41,3 +41,9 @@ div.marginleft10p{
 div.marginright10p{
     margin-right: 10px;
 }
+
+.caption-full{
+    width: 60%;
+    margin: auto;
+    padding: 10px 10px 10px 10px;
+}

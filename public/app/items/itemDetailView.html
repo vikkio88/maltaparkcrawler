@@ -1,18 +1,53 @@
 <div data-cg-busy="Promessa">
     <div class="panel panel-default">
-        <div class="panel-heading">Sections</div>
+        <div class="panel-heading">Item Details</div>
         <div class="panel-body">
-            <div data-filtrofull></div>
+            <div class="thumbnail">
+                <img class="img-responsive" src="http://www.maltapark.com{{vm.item.img_url}}" alt="">
+                <div class="caption-full">
+                    <h4 class="pull-right">{{vm.item.price}}</h4>
+                    <h4><a href="#">{{vm.item.title}}</a></h4>
+                    <p>{{vm.item.description}}</p>
+                </div>
+                <table class="table table-striped">
+
+                    <tr>
+                        <td><strong>Condition</strong></td>
+                        <td>{{vm.item.condition}}</td>
+                    </tr>
+
+                    <tr>
+                        <td><strong>Category</strong></td>
+                        <td>{{vm.item.category}}</td>
+                    </tr>
+
+                    <tr>
+                        <td><strong>Contact</strong></td>
+                        <td><img src="http://www.maltapark.com{{vm.item.contact}}" /> </td>
+                    </tr>
+
+                    <tr>
+                        <td><strong>Seller</strong></td>
+                        <td>{{vm.item.seller}}</td>
+                    </tr>
+
+                    <tr>
+                        <td><strong>Listed On</strong></td>
+                        <td>{{vm.item.listed_on}}</td>
+                    </tr>
+
+                    <tr>
+                        <td><strong>Ends On</strong></td>
+                        <td>{{vm.item.ends_on}}</td>
+                    </tr>
+
+                    <tr>
+                        <td><strong>Views</strong></td>
+                        <td>{{vm.item.views}}</td>
+                    </tr>
+                </table>
+            </div>
         </div>
-        <table class="table table-striped">
-            <thead>
-                <th>#</th>
-                <th>Sections</th>
-            </thead>
-            <tr data-ng-repeat="section in vm.sections | filter:searchText">
-                <td><a data-ui-sref="sectionOne({ sectionId: section.id })">#</a></td>
-                <td>{{ section.description | capitalize }}</td>
-            </tr>
-        </table>
+
     </div>
 </div>
