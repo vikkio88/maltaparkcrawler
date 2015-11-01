@@ -10,16 +10,21 @@ $api->response->headers->set('Content-Type', 'application/json');
 
 // Sections routes
 $api->get('/sections', function () {
-    $stuff = MaltaParkParser::getSectionsFromNet();
-    echo json_encode($stuff);
+    echo json_encode(
+        MaltaParkParser::getSectionsFromNet()
+    );
 });
 $api->get('/sections/:sectionId/items',function($sectionId){
-    echo json_encode([]);
+    echo json_encode(
+        MaltaParkParser::getItemListForSectionFromNet($sectionId)
+    );
 });
 
 // Items routes
 $api->get('/items/:itemId',function($itemId){
-    echo json_encode([]);
+    echo json_encode(
+        MaltaParkParser::getItemDetailFromNet($itemId)
+    );
 });
 
 $api->run();

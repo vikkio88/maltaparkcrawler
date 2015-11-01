@@ -12,9 +12,16 @@ use App\Lib\Helpers;
 use App\Lib\Helpers\Config;
 
 
+/**
+ * Class ItemDetail
+ * @package App\Lib\MaltaParkItems
+ */
 class ItemDetail extends Item
 {
-	private $topDetailsLabel = [
+    /**
+     * @var array
+     */
+    private $topDetailsLabel = [
 		'category' => '/Category',
 		'condition' => '/Condition',
 		'seller' => '/Seller',
@@ -35,7 +42,11 @@ class ItemDetail extends Item
 	public $contact;
 	public $description;
 
-	public function __construct($elementHtml, $itemId)
+    /**
+     * @param $elementHtml
+     * @param $itemId
+     */
+    public function __construct($elementHtml, $itemId)
 	{
 		$this->id = $itemId;
 

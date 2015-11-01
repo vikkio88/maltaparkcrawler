@@ -12,11 +12,21 @@ use App\Lib\Helpers;
 use App\Lib\Helpers\Config;
 
 
+/**
+ * Class ListItem
+ * @package App\Lib\MaltaParkItems
+ */
 class ListItem extends Item
 {
-	public $date;
+    /**
+     * @var null
+     */
+    public $date;
 
-	public function __construct($elementHtml)
+    /**
+     * @param $elementHtml
+     */
+    public function __construct($elementHtml)
 	{
 		$this->id = Helpers\RegExp::getFirstMatch(
 			Config::get('maltapark.idForListItem'),

@@ -9,10 +9,18 @@
 namespace App\Lib\Helpers;
 
 
+/**
+ * Class TextFormatter
+ * @package App\Lib\Helpers
+ */
 class TextFormatter
 {
 
-	public static function currencyStringToFloat($currencyString){
+    /**
+     * @param $currencyString
+     * @return float
+     */
+    public static function currencyStringToFloat($currencyString){
 		//currency is always in this format € 550
 
 		return floatval(

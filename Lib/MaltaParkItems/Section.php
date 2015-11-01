@@ -9,12 +9,26 @@
 namespace App\Lib\MaltaParkItems;
 
 
+/**
+ * Class Section
+ * @package App\Lib\MaltaParkItems
+ */
 class Section
 {
-	public $id;
-	public $description;
+    /**
+     * @var
+     */
+    public $id;
+    /**
+     * @var
+     */
+    public $description;
 
-	public function __construct($id,$description)
+    /**
+     * @param $id
+     * @param $description
+     */
+    public function __construct($id,$description)
 	{
 		$this->id = $id;
 		$this->description = $description;

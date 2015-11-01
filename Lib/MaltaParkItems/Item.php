@@ -2,13 +2,30 @@
 
 namespace App\Lib\MaltaParkItems;
 
+/**
+ * Class Item
+ * @package App\Lib\MaltaParkItems
+ */
 abstract class Item
 {
-
-    //
-	public $id;
-	public $img_url;
-	public $title;
-	public $price;
-	public $price_val;
+    /**
+     * @var
+     */
+    public $id;
+    /**
+     * @var
+     */
+    public $img_url;
+    /**
+     * @var
+     */
+    public $title;
+    /**
+     * @var
+     */
+    public $price;
+    /**
+     * @var
+     */
+    public $price_val;
 }

@@ -9,9 +9,17 @@
 namespace App\Lib\Helpers;
 
 
+/**
+ * Class Dom
+ * @package App\Lib\Helpers
+ */
 class Dom
 {
-	public static function getHtml($node) {
+    /**
+     * @param $node
+     * @return string
+     */
+    public static function getHtml($node) {
 		$innerHTML= '';
 		$children = $node->childNodes;
 		foreach ($children as $child) {

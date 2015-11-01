@@ -1,10 +1,4 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: vincenzo.ciaccio
- * Date: 29/10/2015
- * Time: 12:57
- */
 
 return [
 	//Url

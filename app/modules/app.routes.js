@@ -33,6 +33,7 @@
 
                     //Questo invece permette di avere un hashbang
                     $locationProvider.hashPrefix("!");
+                    $locationProvider.baseHref = "/paltamark/";
 
                     $urlRouterProvider.otherwise("/sections");
 

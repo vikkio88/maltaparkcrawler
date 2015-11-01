@@ -16,9 +16,17 @@ use App\Lib\MaltaParkItems\Section;
 use App\Lib\Helpers\Config;
 use Goutte\Client;
 
+/**
+ * Class MaltaParkParser
+ * @package App\Lib
+ */
 class MaltaParkParser
 {
-	static function getItemDetailFromNet($itemId)
+    /**
+     * @param $itemId
+     * @return ItemDetail|null
+     */
+    static function getItemDetailFromNet($itemId)
 	{
 		$url = Config::get('maltapark.url') .
 			Config::get('maltapark.pageItemDetail') .
@@ -36,7 +44,12 @@ class MaltaParkParser
 		return $itemDetail;
 	}
 
-	static function getItemListForSectionFromNet($sectionId, $pageNum = 1)
+    /**
+     * @param $sectionId
+     * @param int $pageNum
+     * @return array
+     */
+    static function getItemListForSectionFromNet($sectionId, $pageNum = 1)
 	{
 		$url = Config::get('maltapark.url') .
 			Config::get('maltapark.pageListCategory') .
@@ -58,7 +71,10 @@ class MaltaParkParser
 		return $items;
 	}
 
-	static function getSectionsFromNet()
+    /**
+     * @return array
+     */
+    static function getSectionsFromNet()
 	{
 		$sections = [];
 		$contents = file_get_contents(Config::get('maltapark.url'));
