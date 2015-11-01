@@ -9,7 +9,7 @@
 namespace App\Lib\MaltaParkItems;
 
 use App\Lib\Helpers;
-use Illuminate\Support\Facades\Config;
+use App\Lib\Helpers\Config;
 
 
 class ListItem extends Item

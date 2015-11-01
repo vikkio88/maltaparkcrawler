@@ -13,7 +13,7 @@ use App\Lib\MaltaParkItems\ItemDetail;
 use App\Lib\MaltaParkItems\ListItem;
 use App\Lib\Helpers;
 use App\Lib\MaltaParkItems\Section;
-use Illuminate\Support\Facades\Config;
+use App\Lib\Helpers\Config;
 use Goutte\Client;
 
 class MaltaParkParser
