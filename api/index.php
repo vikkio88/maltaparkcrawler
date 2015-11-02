@@ -8,6 +8,16 @@ $api = new \Slim\Slim();
 
 $api->response->headers->set('Content-Type', 'application/json');
 
+$api->get('/ping', function () {
+    echo json_encode(
+        [
+            "status" => "service up",
+            "message" => "in a bottle",
+            "suca" => true
+        ]
+    );
+});
+
 // Sections routes
 $api->get('/sections', function () {
     echo json_encode(
@@ -15,8 +25,10 @@ $api->get('/sections', function () {
     );
 });
 $api->get('/sections/:sectionId/items',function($sectionId){
+    $api = \Slim\Slim::getInstance();
+    $pageNum = $api->request->get('p',1);
     echo json_encode(
-        MaltaParkParser::getItemListForSectionFromNet($sectionId)
+        MaltaParkParser::getItemListForSectionFromNet($sectionId,$pageNum)
     );
 });
 

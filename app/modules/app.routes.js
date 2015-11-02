@@ -23,16 +23,13 @@
                     $locationProvider
                 )
                 {
-                    /*
-                    Sfortunatamente non funziona perch laravel crede che siano richieste GET
+
                     $locationProvider.html5Mode({
                         enabled: true,
                         requireBase: false
                     });
-                    */
 
-                    //Questo invece permette di avere un hashbang
-                    $locationProvider.hashPrefix("!");
+
                     $locationProvider.baseHref = "/paltamark/";
 
                     $urlRouterProvider.otherwise("/sections");
