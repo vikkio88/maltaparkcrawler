@@ -3,11 +3,11 @@
         <div class="panel-heading"><h2>{{vm.section.description | capitalize}}</h2></div>
         <div class="panel-body">
             <div data-pagination></div>
-            <div data-filtrofull></div>
+            <!--<div data-filtrofull></div>-->
         </div>
-
-        <div ng-repeat="item in vm.items" ng-if="$index % 3 == 0" class="row">
-            <div class="col-sm-6 col-md-4">
+        <!--| filter:searchText not working with this kind of pagination -->
+        <div data-ng-repeat="item in vm.items" ng-if="$index % 3 == 0" class="row">
+            <div data-ng-if="vm.items[$index] != nil" class="col-sm-6 col-md-4">
                 <div class="thumbnail thumb-list">
                     <img style="height: auto; max-width: 100%; display: block;" alt="100%x200" class="img-responsive" src="http://www.maltapark.com{{ vm.items[$index].img_url }}" data-holder-rendered="true">
                     <div class="caption">
@@ -19,7 +19,7 @@
                 </div>
             </div>
 
-            <div class="col-sm-6 col-md-4">
+            <div data-ng-if="vm.items[$index + 1] != nil" class="col-sm-6 col-md-4">
                 <div class="thumbnail thumb-list">
                     <img style="height: auto; max-width: 100%; display: block;" alt="100%x200" class="img-responsive" src="http://www.maltapark.com{{ vm.items[$index + 1].img_url }}" data-holder-rendered="true">
                     <div class="caption">
