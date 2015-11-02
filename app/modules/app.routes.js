@@ -23,14 +23,17 @@
                     $locationProvider
                 )
                 {
-
+                    /*
+                    Unfortunately is not working with the .htaccess
                     $locationProvider.html5Mode({
                         enabled: true,
                         requireBase: false
                     });
-
-
                     $locationProvider.baseHref = "/paltamark/";
+                    */
+
+                    //Hashbang notation
+                    $locationProvider.hashPrefix("!");
 
                     $urlRouterProvider.otherwise("/sections");
 
