@@ -1,6 +1,6 @@
 {
     "require": {
         "slim/slim": "^2.6",
-        "fabpot/goutte": "^3.1"
+        "symfony/dom-crawler": "^2.7"
     }
 }
