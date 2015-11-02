@@ -26,7 +26,7 @@ GET /api/items/:itemId
 
 
 ##Laravel/Dingo
-the same project is implemented in [another branch](https://github.com/vikkio88/maltaparkcrawler/tree/laravel-dingo) using Laravel5.1/DingoApi (https://github.com/francescomalatesta/laravel-api-boilerplate-jwt) boilerplate.
+the same project is implemented in [another branch](https://github.com/vikkio88/maltaparkcrawler/tree/laravel-dingo) using [Laravel5.1/DingoApi](https://github.com/francescomalatesta/laravel-api-boilerplate-jwt) boilerplate.
 Working fine, but still, using laravel for such as small project was like aiming to shot flies with a gamma-ray phaser.
 
 
