@@ -6,9 +6,11 @@ use \App\Lib\MaltaParkParser;
 
 $api = new \Slim\Slim();
 
+
 $api->response->headers->set('Content-Type', 'application/json');
 
 $api->get('/ping', function () {
+    \App\Lib\Helpers\Logger::write("hi");
     echo json_encode(
         [
             "status" => "service up",

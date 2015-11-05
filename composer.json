@@ -1,6 +1,8 @@
 {
     "require": {
         "slim/slim": "^2.6",
-        "symfony/dom-crawler": "^2.7"
+        "symfony/dom-crawler": "^2.7",
+        "symfony/finder": "^2.7",
+        "symfony/css-selector": "^2.7"
     }
 }

@@ -32,7 +32,7 @@ class MaltaParkParser
 			Config::get('maltapark.pageItemDetail') .
 			$itemId;
 
-		$content = file_get_contents($url);
+		$content = Helpers\FakeBrowser::get($url);
 		$crawler = new Crawler(null, $url);
 		$crawler->addContent($content, "text/html");
 
@@ -56,7 +56,7 @@ class MaltaParkParser
 			Config::get('maltapark.pageNum') .
 			$pageNum;
 
-		$content = file_get_contents($url);
+		$content = Helpers\FakeBrowser::get($url);
 		$items = [];
 		$crawler = new Crawler(null, $url);
 		$crawler->addContent($content, "text/html");
@@ -73,7 +73,7 @@ class MaltaParkParser
     static function getSectionsFromNet()
 	{
 		$sections = [];
-		$contents = file_get_contents(Config::get('maltapark.url'));
+		$contents = Helpers\FakeBrowser::get(Config::get('maltapark.url'));
 		if (!$contents) return [];
 		$matches = Helpers\RegExp::getAllMatch(Config::get('maltapark.categoryRegexp'), $contents);
 		for ($i = 0; $i < count($matches[1]); $i++) {
