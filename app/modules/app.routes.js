@@ -60,6 +60,17 @@
                                 }
                             })
 
+                        //Search
+                        .state("search",
+                        {
+                            url: "/search?query&page",
+                            templateUrl: "app/search/searchResultView.html",
+                            controller: "SearchCtrl as vm",
+                            ncyBreadcrumb: {
+                                label: 'Search Results'
+                            }
+                        })
+
                     //Items
                         .state("itemOne",
                             {

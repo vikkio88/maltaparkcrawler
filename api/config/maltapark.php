@@ -5,6 +5,7 @@ return [
 	'url' => 'http://www.maltapark.com',
 	'pageListCategory' => '/listings.aspx?category=',
 	'pageItemDetail' => '/item.aspx?ItemID=',
+    'pageSearch' => '/search.aspx?search=',
 
 	//Url helper
 	'pageNum' => '&page=',
