@@ -27,7 +27,8 @@ $api->get('/sections', function () {
 $api->get('/search', function () {
     $api = \Slim\Slim::getInstance();
     $pageNum = $api->request->get('p', 1);
-    $query = $api->request->get('q', "");
+    $query = urlencode($api->request->get('q', ""));
+
     echo json_encode(
         MaltaParkParser::searchFromNet($query, $pageNum)
     );
