@@ -18,6 +18,14 @@
             }
         });
 
+        directives.directive('paginationkmp',function(){
+            return{
+                restrict: 'AE',
+                replace: false,
+                templateUrl: 'app/common/views/paginationkmp.html'
+            }
+        });
+
         directives.directive('filtrofull',function(){
             return{
                 restrict: 'AE',

@@ -31,6 +31,9 @@
     <!--Items-->
     <script type="application/javascript" src="app/items/itemCtrl.js"></script>
 
+    <!--PeekMePosted-->
+    <script type="application/javascript" src="app/keepmeposted/jobsCtrl.js"></script>
+
 
     <base href="/paltamark/">
 
@@ -49,9 +52,10 @@
     <div class="collapse navbar-collapse" id="nav-toggle">
         <ul class="nav navbar-nav">
             <li data-ui-sref-active="active"><a data-ui-sref="sections">Sections</a></li>
+            <li data-ui-sref-active="active"><a data-ui-sref="jobs">Jobs</a></li>
         </ul>
         <form class="navbar-form navbar-right"  style="margin-right: 50%" role="search" onsubmit="javascript:window.location.href='./#!/search?query='+document.getElementsByName('query')[0].value">
-            <input type="text" name="query" class="form-control" size="50" placeholder="Search">
+            <input type="text" name="query" class="form-control" size="50" placeholder="Search on PaltaMark">
         </form>
     </div>
 </nav>

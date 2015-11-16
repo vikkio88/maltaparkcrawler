@@ -1,0 +1,55 @@
+<style type="text/css">
+    .thumb-list {
+        height: 400px;
+    }
+</style>
+<div data-cg-busy="Promessa">
+    <div class="panel panel-default">
+        <div class="panel-heading"><h2>PeekMeKosted Jobs</h2></div>
+        <div class="panel-body">
+            <div data-paginationkmp></div>
+        </div>
+        <!--| filter:searchText not working with this kind of pagination -->
+        <div data-ng-repeat="item in vm.items" ng-if="$index % 3 == 0" class="row">
+            <div data-ng-if="vm.items[$index] != nil" class="col-sm-6 col-md-4">
+                <div class="thumbnail thumb-list">
+                    <img style="height: auto; width: 100px; display: block;" alt="100%x200" class="img-responsive" src="{{ vm.imgUrl + vm.items[$index].Logo }}" data-holder-rendered="true">
+                    <div class="caption">
+                        <h3>{{vm.items[$index].Position}} @ {{vm.items[$index].Company_Name}}</h3>
+                        <h4>{{ vm.items[$index].Basis }}</h4>
+                        <p>{{ vm.items[$index].Publish_Date}}</p>
+                        <p class="buttons"><a href="{{ vm.kmpUrl + vm.items[$index].FUrl }}" target="_blank" class="btn btn-default" role="button">on KeepMePosted</a></p>
+                    </div>
+                </div>
+            </div>
+
+            <div data-ng-if="vm.items[$index + 1] != nil" class="col-sm-6 col-md-4">
+                <div class="thumbnail thumb-list">
+                    <img style="height: auto; width: 100px; display: block;" alt="100%x200" class="img-responsive" src="{{ vm.imgUrl + vm.items[$index + 1].Logo }}" data-holder-rendered="true">
+                    <div class="caption">
+                        <h3>{{vm.items[$index + 1].Position}} @ {{vm.items[$index + 1].Company_Name}}</h3>
+                        <h4>{{ vm.items[$index + 1].Basis }}</h4>
+                        <p>{{ vm.items[$index + 1].Publish_Date}}</p>
+                        <p class="buttons"><a href="{{ vm.kmpUrl + vm.items[$index + 1].FUrl }}" target="_blank" class="btn btn-default" role="button">on KeepMePosted</a></p>
+                    </div>
+                </div>
+            </div>
+
+            <div data-ng-if="vm.items[$index + 2] != nil" class="col-sm-6 col-md-4">
+                <div class="thumbnail thumb-list">
+                    <img style="height: auto; width: 100px; display: block;" alt="100%x200" class="img-responsive" src="{{ vm.imgUrl + vm.items[$index + 2].Logo }}" data-holder-rendered="true">
+                    <div class="caption">
+                        <h3>{{vm.items[$index + 2].Position}} @ {{vm.items[$index +2].Company_Name}}</h3>
+                        <h4>{{ vm.items[$index + 2].Basis }}</h4>
+                        <p>{{ vm.items[$index + 2].Publish_Date}}</p>
+                        <p class="buttons"><a href="{{ vm.kmpUrl + vm.items[$index + 2].FUrl }}" target="_blank" class="btn btn-default" role="button">on KeepMePosted</a></p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <div data-paginationkmp></div>
+    </div>
+
+</div>

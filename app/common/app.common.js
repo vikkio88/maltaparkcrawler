@@ -14,6 +14,12 @@
                 isDebug: function(){
                     return config.env == "DEBUG";
                 },
+                kmpUrl: function (){
+                    return config.kmpUrl;
+                },
+                kmpImgUrl: function (){
+                    return config.kmpUrl+config.kmpImg;
+                },
                 Get : function(uri){
                     return  $http.get(config.apiUrl+uri);
                 }

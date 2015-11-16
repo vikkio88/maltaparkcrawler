@@ -1,6 +1,7 @@
 <?php
 require_once("../vendor/autoload.php");
 use \App\Lib\MaltaParkParser;
+use \App\Lib\KeepMePostedGateway;
 
 $api = new \Slim\Slim();
 
@@ -15,6 +16,12 @@ $api->get('/ping', function () {
             "suca" => true
         ]
     );
+});
+
+$api->get('/jobs', function () {
+    $api = \Slim\Slim::getInstance();
+    $pageNum = $api->request->get('p', 1);
+    echo KeepMePostedGateway::getJobs($pageNum);
 });
 
 // Sections routes
