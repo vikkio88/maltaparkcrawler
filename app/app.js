@@ -23,6 +23,14 @@
             }
         );
 
+        app.filter('kmpDateFormatter',
+            function(){
+                return function(input){
+                    return eval(input.toString().replace('/','').replace('/',''));
+                }
+            }
+        );
+
 
 
         //Configurazioni Varie

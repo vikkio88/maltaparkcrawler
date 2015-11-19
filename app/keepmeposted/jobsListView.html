@@ -17,7 +17,7 @@
                     <div class="caption">
                         <h3>{{vm.items[$index].Position}} @ {{vm.items[$index].Company_Name}}</h3>
                         <h4>{{ vm.items[$index].Basis }}</h4>
-                        <p>{{ vm.items[$index].Publish_Date}}</p>
+                        <p>{{ vm.items[$index].Publish_Date | kmpDateFormatter}}</p>
                         <p class="buttons"><a href="{{ vm.kmpUrl + vm.items[$index].FUrl }}" target="_blank" class="btn btn-default" role="button">on KeepMePosted</a></p>
                     </div>
                 </div>
@@ -29,7 +29,7 @@
                     <div class="caption">
                         <h3>{{vm.items[$index + 1].Position}} @ {{vm.items[$index + 1].Company_Name}}</h3>
                         <h4>{{ vm.items[$index + 1].Basis }}</h4>
-                        <p>{{ vm.items[$index + 1].Publish_Date}}</p>
+                        <p>{{ vm.items[$index + 1].Publish_Date | kmpDateFormatter}}</p>
                         <p class="buttons"><a href="{{ vm.kmpUrl + vm.items[$index + 1].FUrl }}" target="_blank" class="btn btn-default" role="button">on KeepMePosted</a></p>
                     </div>
                 </div>
@@ -41,7 +41,7 @@
                     <div class="caption">
                         <h3>{{vm.items[$index + 2].Position}} @ {{vm.items[$index +2].Company_Name}}</h3>
                         <h4>{{ vm.items[$index + 2].Basis }}</h4>
-                        <p>{{ vm.items[$index + 2].Publish_Date}}</p>
+                        <p>{{ vm.items[$index + 2].Publish_Date  | kmpDateFormatter}}</p>
                         <p class="buttons"><a href="{{ vm.kmpUrl + vm.items[$index + 2].FUrl }}" target="_blank" class="btn btn-default" role="button">on KeepMePosted</a></p>
                     </div>
                 </div>
