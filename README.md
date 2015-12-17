@@ -1,4 +1,6 @@
 # maltaparkcrawler (PaltaMark)
+[![Build Status](https://scrutinizer-ci.com/g/vikkio88/maltaparkcrawler/badges/build.png?b=master)](https://scrutinizer-ci.com/g/vikkio88/maltaparkcrawler/build-status/master) [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/vikkio88/maltaparkcrawler/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/vikkio88/maltaparkcrawler/?branch=master)
+
 a small api project to browse <a href="http://maltapark.com">Maltapark</a> with a better user experience.
 
 ## Project
